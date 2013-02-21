@@ -14,8 +14,8 @@ alias p="cd ~/Projects"
 alias g="git"
 alias h="history"
 alias j="jobs"
-alias v="vim"
-alias m="mate ."
+#alias v="vim"
+#alias m="mate ."
 alias s="subl ."
 alias o="open"
 alias oo="open ."
@@ -51,7 +51,7 @@ alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en1"
+alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
 
 # Enhanced WHOIS lookups
@@ -65,7 +65,7 @@ alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/La
 
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+alias httpdump="sudo tcpdump -i en0 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 
 # Canonical hex dump; some systems have this symlinked
 command -v hd > /dev/null || alias hd="hexdump -C"
@@ -127,6 +127,6 @@ for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 done
 
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
-alias stfu="osascript -e 'set volume output muted true'"
-alias pumpitup="osascript -e 'set volume 7'"
+#alias stfu="osascript -e 'set volume output muted true'"
+#alias pumpitup="osascript -e 'set volume 7'"
 alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
